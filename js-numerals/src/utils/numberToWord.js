@@ -111,6 +111,14 @@ export function numToWord(num){
         return ones[start] + ' million ' + numToWord(end)
       }
 
+    //Helper method for 100000000 > num >= 10000000
+    function inTenMillions(){
+        let start = +(numString.slice(0,2))
+        let end = +(numString.slice(2))
+
+        return numToWord(start) + ' million ' + numToWord(end)
+    }
+
     
 
 }
