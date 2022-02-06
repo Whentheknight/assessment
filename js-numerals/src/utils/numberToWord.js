@@ -12,7 +12,7 @@ export function numToWord(num){
 
     switch(true){
       //throw error when number is negative
-      case (num<0) : throw new Error('Negative numbers are not supported.');
+      case (num<0) : throw new Error('Negative numbers are not supported! Please enter a valid number!');
       //return zero if number is 0
       case (num == 0) : return 'zero';
       //case when number is lower than 20 
@@ -28,7 +28,7 @@ export function numToWord(num){
             case 7: return inMillions();
             case 8: return inTenMillions();
             case 9: return inHundredMillions();
-            default: throw new Error('Number is too big.')
+            default: throw new Error('Number is too big! Please enter a number between 0 and 100000000!')
         }
     }
 
@@ -122,7 +122,7 @@ export function numToWord(num){
         let start = +(numString.slice(0,3))
         let end = +(numString.slice(3))
 
-        return hundredsWithoutAnd(start) + ' million ' + numToWord(end)
+        return numToWord(start) + ' million ' + numToWord(end)
       }
 
 }
