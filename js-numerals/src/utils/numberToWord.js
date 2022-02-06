@@ -119,6 +119,12 @@ export function numToWord(num){
         return numToWord(start) + ' million ' + numToWord(end)
     }
 
-    
+    //Helper method for 1000000000 > num >= 100000000
+    function inHundredMillions(){
+        let start = +(numString.slice(0,3))
+        let end = +(numString.slice(3))
+
+        return hundredsWithoutAnd(start) + ' million ' + numToWord(end)
+      }
 
 }
