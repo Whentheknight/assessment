@@ -57,4 +57,35 @@ export function numToWord(num){
         return ones[start] + ' hundred and ' + numToWord(end);
         }
       }
+
+      //Helper method for 10000 > num >= 1000
+      function inThousands(){
+        let start = +(numString[0])
+        let end = +(numString.slice(1));
+
+        if (end === 0){ return ones[start] + ' thousand';}
+        if (end < 100){ return ones[start] + ' thousand and ' + numToWord(end);}
+        return ones[start] + ' thousand ' + numToWord(end);
+      }
+
+      //Helper method for 100000 > num >= 10000
+      function inTenThousands(){
+        let start = +(numString.slice(0,2))
+        let end = +(numString.slice(2));
+  
+        if (end === 0){
+            if(start<20){
+              return ones[start] + ' thousand';
+            }
+            
+           return numToWord(start) + ' thousand';
+        }
+    
+        else {
+          if(start<20){
+            return ones[start] + ' thousand ' + numToWord(end);
+          }
+          return numToWord(start) + ' thousand ' + numToWord(end);
+        }
+      }
 }
