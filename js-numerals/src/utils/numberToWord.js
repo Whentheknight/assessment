@@ -28,8 +28,8 @@ export function numToWord(num){
             case 7: return inMillions();
             case 8: return inTenMillions();
             case 9: return inHundredMillions();
+            default: throw new Error('Number is too big.')
         }
-        break;
     }
 
     //Helper method for 100 > num >= 20
