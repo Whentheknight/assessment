@@ -42,4 +42,19 @@ export function numToWord(num){
         }
         return tens[start] + '-' + ones[end];
       }
+
+    //Helper method for 1000 > num >= 100
+    function inHundreds(){
+        let start = +(numString[0])
+        let end = +(numString.slice(1))
+
+        console.log(end)
+
+        if (numString[1] === '0' && numString[2] === '0'){
+        return ones[start] +' hundred';
+        }
+      else{
+        return ones[start] + ' hundred and ' + numToWord(end);
+        }
+      }
 }
