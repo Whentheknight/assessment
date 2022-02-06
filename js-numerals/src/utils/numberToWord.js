@@ -102,4 +102,15 @@ export function numToWord(num){
           return numToWord(start) + ' thousand ' + numToWord(end);
         }
     }
+
+    //Helper method for 10000000 > num >= 1000000
+    function inMillions(){
+        let start = +(numString[0])
+        let end = +(numString.slice(1))
+
+        return ones[start] + ' million ' + numToWord(end)
+      }
+
+    
+
 }
