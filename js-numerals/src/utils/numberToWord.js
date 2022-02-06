@@ -88,4 +88,18 @@ export function numToWord(num){
           return numToWord(start) + ' thousand ' + numToWord(end);
         }
       }
+
+      //Helper method for 1000000 > num >= 100000
+      function inHundredThousands(){
+        let start = +(numString.slice(0,3))
+        let end = +(numString.slice(3))
+
+        if(end === 0){
+          return numToWord(start)+ ' thousand';
+        } 
+
+        else{
+          return numToWord(start) + ' thousand ' + numToWord(end);
+        }
+    }
 }
