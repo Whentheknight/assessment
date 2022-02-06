@@ -47,9 +47,7 @@ export function numToWord(num){
     function inHundreds(){
         let start = +(numString[0])
         let end = +(numString.slice(1))
-
-        console.log(end)
-
+        
         if (numString[1] === '0' && numString[2] === '0'){
         return ones[start] +' hundred';
         }
