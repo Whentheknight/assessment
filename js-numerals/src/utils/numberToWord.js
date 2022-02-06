@@ -31,4 +31,15 @@ export function numToWord(num){
         }
         break;
     }
+
+    //Helper method for 100 > num >= 20
+    function inTens(){
+        let start = +(numString[0])
+        let end = +(numString[1])
+
+        if(numString[1] == '0'){
+          return tens[start];
+        }
+        return tens[start] + '-' + ones[end];
+      }
 }
