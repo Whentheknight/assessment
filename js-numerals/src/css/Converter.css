@@ -5,8 +5,10 @@
 }
 
 :root {
-  --card-height: 65vh;
+  --card-height: 63vh;
   --card-width: calc(var(--card-height) / 1.5);
+  --input-width: calc(var(--card-width)/2);
+  --input-height: calc(var(--input-width)/6)
 }
 
 
@@ -29,19 +31,16 @@ body {
   padding: 3px;
   position: relative;
   border-radius: 6px;
-  justify-content: center;
   align-items: center;
   text-align: center;
   display: flex;
-  font-size: 1em;
+  font-size: 2vh;
    color: rgb(88 199 250 / 100%);
   transition: color 1s;
-  cursor: pointer;
   font-family: cursive;
   flex-direction: column;
+  justify-content: space-around;
 }
-
-
 
 .card::before {
   content: "";
@@ -93,4 +92,19 @@ a {
   font-family: sans-serif;
   font-weight: bold;
   margin-top: 2rem;
+}
+
+input{
+  width: var(--input-width);
+  height: var(--input-height);
+  font-family: cursive;
+  font-size: 2vh;
+}
+
+.messages{
+  min-height: 11vw;
+}
+
+#error{
+  color: red;
 }

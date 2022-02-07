@@ -55,5 +55,5 @@ test('lowert than 0', ()=>{
 })
 
 test('number bigger than 999999999', ()=>{
-    expect(() => {numToWord(10000000000)}).toThrow("Number is too big! Please enter a number between 0 and 100000000!");
+    expect(() => {numToWord(10000000000)}).toThrow("Number is too big! Please enter a number between 0 and 999999999!");
 })
