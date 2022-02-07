@@ -14,7 +14,7 @@ export function numToWord(num){
       //throw error when number is negative
       case (num<0) : throw new Error('Negative numbers are not supported! Please enter a valid number!');
       //return zero if number is 0
-      case (num == 0) : return 'zero';
+      case (num === 0) : return 'zero';
       //case when number is lower than 20 
       case (num < 20) : return ones[num];
       //nested switch case for number bigger of equal to 20
@@ -28,7 +28,7 @@ export function numToWord(num){
             case 7: return inMillions();
             case 8: return inTenMillions();
             case 9: return inHundredMillions();
-            default: throw new Error('Number is too big! Please enter a number between 0 and 100000000!')
+            default: throw new Error('Number is too big! Please enter a number between 0 and 999999999!')
         }
     }
 
@@ -37,7 +37,7 @@ export function numToWord(num){
         let start = +(numString[0])
         let end = +(numString[1])
 
-        if(numString[1] == '0'){
+        if(numString[1] === '0'){
           return tens[start];
         }
         return tens[start] + '-' + ones[end];
