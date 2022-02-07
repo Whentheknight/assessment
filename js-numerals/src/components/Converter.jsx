@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { numToWord } from "../utils/numberToWord";
 
 const Converter = () =>{
@@ -25,7 +24,7 @@ const Converter = () =>{
     return(
         <div className="converterDiv">
             <h1>Type in a number:</h1>
-            <input className="input" defaultValue="0" min={number} onChange={translate} type="number"></input>
+            <input className="input" defaultValue="0" min={0} onChange={translate} type="number"></input>
             <span id="error"></span>
             <span id="converted"></span>
         </div>)
