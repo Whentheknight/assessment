@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import './App.css'
-import { numToWord } from './utils/numberToWord'
+import './css/App.css'
 import Converter from './components/Converter'
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <Converter></Converter>
+      <Converter/>
     </div>
   )
 }

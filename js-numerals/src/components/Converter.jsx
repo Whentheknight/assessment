@@ -1,42 +1,49 @@
 import { numToWord } from "../utils/numberToWord";
+import {useState} from 'react';
+import '../css/Converter.css';
 
 const Converter = () =>{
+    const [num, setNum] = useState("");
+    const [error, setError] = useState("");
+    const [converted, setConverted] = useState("");
 
-    function translate(){
-        let error = document.getElementById("error");
-        let converted = document.getElementById("converted");
-        let num = document.querySelector('.input').value;
-        
+    function translate(event){
+        setNum(event.target.value)
+
         try{
-            ifValid(num, error, converted);
+            setError("")
+            setConverted(convert(num))
             
-        } catch(e){
-            ifNotValid(converted, error, e);
+        } catch(error){
+            setConverted("")
+            setError(getErrorMsg(error))
         }
     } 
 
     return(
+        <div className="card">
         <div className="converterDiv">
             <h1>Type in a number:</h1>
-            <input className="input" defaultValue="0" min={0} onChange={translate} type="number"></input>
-            <span id="error"></span>
-            <span id="converted"></span>
-        </div>)
+            <input className="input" defaultValue="0" min={0} onChange={translate} value={num} type="number"></input> 
+            </div>
+
+            <div className="messages">
+                {error ? <span id="error">{error}</span> : null}
+            {converted ? <span id="converted">{converted}</span> : null}
+            
+        </div></div>)
 }
 
 export default Converter;
 
 //If number conversion can happen without an error
-function ifValid(num, error, converted) {
+function convert(num) {
     let numInt = parseInt(num);
 
-    error.textContent = "";
-    converted.textContent = numToWord(numInt);
+    return numToWord(numInt);
 }
 
 //If error was thrown when conversion happened
-function ifNotValid(converted, error, e) {
-    converted.textContent = "";
-    error.textContent = e.toString().replace('Error: ', '');
-    error.style.color = "red";
+function getErrorMsg(e) {
+    return e.toString().replace('Error: ', '');
 }
