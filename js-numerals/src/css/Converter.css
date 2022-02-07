@@ -96,7 +96,9 @@ a {
 
 input{
   width: var(--input-width);
-  height: var(--input-height)
+  height: var(--input-height);
+  font-family: cursive;
+  font-size: 2vh;
 }
 
 .messages{
